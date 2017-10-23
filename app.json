@@ -7,6 +7,8 @@
     "pages/news/hy/hy_detail",
     "pages/news/jz/jz_detail",
     "pages/news/new/new_detail",
+    "pages/news/sw/sw_detail",
+    "pages/news/wn/wn_detail",
     "pages/more/login",
     "pages/more/append",
     "pages/more/more",
@@ -27,7 +29,13 @@
     "pages/core/cet/cet",
     "pages/core/cet/result",
     "pages/core/fw/fw",
-    "pages/more/help/volunteerHelp"
+    "pages/more/help/volunteerHelp",    
+    "pages/core/ts/ts",
+    "pages/core/ts/map",
+    "pages/core/oa/oa",
+    "pages/core/btdz/btdz",
+    "pages/core/btdz/xlmd",
+    "pages/core/btdz/xy"
   ],
   "window": {
     "navigationBarBackgroundColor": "#7acfa6",

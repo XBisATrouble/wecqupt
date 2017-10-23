@@ -1,4 +1,4 @@
-//xs.js
+//xs.js 
 //获取应用实例
 var app = getApp();
 
@@ -278,7 +278,7 @@ Page({
       success: function(res) {
         
         if(res.data && res.data.status === 200) {
-
+                    
           doSuccess(res.data.data, true);
         }else{
 

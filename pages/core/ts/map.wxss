@@ -1,0 +1,85 @@
+.container{
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	background-color: #f7f7f7;
+}
+
+.ts-header{
+	display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;    
+    padding: 20rpx 0;
+}
+
+.ts-text{
+	display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    padding-left: 15rpx;
+}
+
+.ts-header-title{
+	font-size: 11pt;
+    color: #ccc;
+}
+
+.ts-detail{	
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+}
+
+.ts-detail-item{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9pt;
+    padding: 0 20rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.ts-detail-text{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    width: 430rpx;
+}
+
+.ts-name{
+	font-size: 15pt;
+    font-weight: bold;
+    line-height: 150%;
+    margin-bottom: 15rpx;
+    color: #222;
+    padding: 25rpx 5rpx 20rpx;
+}
+
+.ts-num{
+	font-size: 9pt;
+    line-height: 150%;
+    margin-bottom: 15rpx;
+    color: #222;
+}
+
+.ts-position{
+	font-size: 9pt;
+    line-height: 150%;
+    margin-bottom: 15rpx;
+    color: #222;
+}
+
+.ts-map{
+	display: block;
+    width: 200rpx;
+    height: 200rpx;
+    padding-right: 5rpx;
+}
+
+.ts-map-photo{
+	width: 100%;
+	height: 100%;
+}

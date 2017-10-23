@@ -1,5 +1,5 @@
-//ks.js
-//获取应用实例
+//ks.js 
+//获取应用实例 
 var app = getApp();
 Page({
   data: {
@@ -77,7 +77,7 @@ Page({
     };
     if(app._user.teacher && !options.name){ data.type = 'teacher'; }
 
-    //判断并读取缓存
+    //判断并读取缓存 
     if(app.cache.ks && !options.name){ ksRender(app.cache.ks); }
     function ksRender(list){
       if(!list || !list.length){

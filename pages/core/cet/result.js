@@ -1,4 +1,4 @@
-// cet.js
+// cet.js 
 const queryCET = 'https://we.cqu.pt/api/cet/get_cet_result.php';
 const app = getApp();
 Page({
@@ -30,6 +30,7 @@ Page({
         var data = res.data;
         if(data.status == '200' ){
           var {
+              type,
               name,
               candidate_number,
               listening,
@@ -38,9 +39,12 @@ Page({
               score,
               school,
               time,
+              oral_number,
+              oral_score
             } = data.data,
             result = null;
           result = {
+            examName: type,
             name: name,
             idCard: candidate_number,
             listen: listening,
@@ -48,7 +52,9 @@ Page({
             read: reading,
             total: score,
             school: school,
-            time:time
+            time:time,
+            oralCard: oral_number,
+            oralScore: oral_score
           };
           that.setData({
             result:result,

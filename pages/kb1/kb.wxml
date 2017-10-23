@@ -192,9 +192,9 @@
                 </block>
             </view>
             <view class="kb-info-card-swipers" wx:else>
-                <view class="kb-info-swiper-mask-left" data-target="targetI" data-direction="left" bindtap="swiperChangeBtn">
+                <!-- <view class="kb-info-swiper-mask-left" data-target="targetI" data-direction="left" bindtap="swiperChangeBtn">
                     <image src="/images/core/common/left_g.png"></image>
-                </view>
+                </view> -->
                 <swiper circular="{{true}}" indicator-dots="true" current="{{targetI}}" bindchange="infoCardChange" duration="250">
                     <block wx:for="{{targetLessons}}" wx:key="{{cid}}" wx:for-index="cid" style="z-index:{{cid}};">
                         <swiper-item class="kb-info-card">
@@ -231,9 +231,9 @@
                         </swiper-item>
                     </block>
                 </swiper>
-                <view class="kb-info-swiper-mask-right" data-target="targetI" data-direction="right" bindtap="swiperChangeBtn">
+                <!-- <view class="kb-info-swiper-mask-right" data-target="targetI" data-direction="right" bindtap="swiperChangeBtn">
                     <image src="/images/core/common/right_g.png"></image>
-                </view>
+                </view> -->
             </view>
 
         </view>

@@ -1,40 +1,77 @@
 <view class="container home">
-   <view wx:if="{{remind}}" class="remind-box">
-        <image wx:if="{{remind == '加载中'}}" class="remind-img" src="/images/index/loading.gif"></image>
-        <block wx:else>
-          <image class="remind-img" src="/images/index/nothing.png"></image>
-          <text class="remind-text">{{remind}}</text>
-        </block>
-    </view>
-    <block wx:else>
-       <!-- 查询结果  -->
-        <view class="result" wx:if="{{result}}">
-          <view class="resultTitle">查询结果</view>
-          <view class="baseinf">
-            <view class="examName">{{result.examName}}</view>
-            <view class="name">{{'姓名：' + result.name}}</view>
-             <view class="school">{{'学校：' + result.school}}</view>
-            <view class="time">{{'考试时间：' + result.time}}</view>
-            <view class="idCard">{{'准考证号：' + result.idCard}}</view>
-          
-          </view>
-          <view class="score">
-              <view class="total">{{'总分：' + result.total}}</view>
-              <view class="scoreList">
-                <view class="listen list">
-                  <view class="left">听力</view>
-                  <view class="right">{{result.listen}}</view>
-                </view>
-                <view class="read list">
-                  <view class="left">阅读</view>
-                  <view class="right">{{result.read}}</view>
-                </view>
-                <view class="write list">
-                  <view class="left">写作和翻译</view>
-                  <view class="right">{{result.write}}</view>
-                </view>
-              </view>
-          </view>
+ <view wx:if="{{remind}}" class="remind-box">
+  <image wx:if="{{remind == '加载中'}}" class="remind-img" src="/images/index/loading.gif"></image>
+  <block wx:else>
+    <image class="remind-img" src="/images/index/nothing.png"></image>
+    <text class="remind-text">{{remind}}</text>
+  </block>
+</view>
+<block wx:else>
+ <!-- 查询结果  -->
+ <view class="xf-title-wraper">
+  <view class="xf-title-info">
+    <text class="xf-title">CET查询</text>
+    <view class="xf-stu-info" wx:if="{{result}}">
+      <text>姓名：{{result.name}}</text>
+      <text>等级：{{result.examName}}</text>
+    </view>            
+  </view> 
+  <image class="xf-title-icon" src="/images/core/cet.png"></image>
+</view>
+
+<view class="xf-types">
+  <block wx:if="{{result}}">
+    <view class="xf-type-item xf-item-show">
+      <view class="xf-head" bindtap="slideDetail">
+        <text class="xf-type-name">笔试成绩</text>
+      </view>                
+      <view class="xf-detail">
+        <view class="xf-detail-item">
+          <text class="xf-detail-label">准考证号</text>
+          <text>：</text>
+          <text class="xf-detail-content">{{result.idCard}}</text>
         </view>
-    </block>
+        <view class="xf-detail-item">
+          <text class="xf-detail-label">总分</text>
+          <text>：</text>
+          <text class="xf-detail-content score_total">{{result.total}}</text>
+        </view>
+        <view class="xf-detail-item-second xf-MajorTuition">
+          <text class="xf-detail-label-second">听力</text>
+          <text>：</text>
+          <text class="xf-detail-content">{{result.listen}}</text>
+        </view>
+        <view class="xf-detail-item-second xf-GradeTuition">
+          <text class="xf-detail-label-second">阅读</text>
+          <text>：</text>
+          <text class="xf-detail-content">{{result.read}}</text>
+        </view>
+        <view class="xf-detail-item-second xf-SecMajorTuition">
+          <text class="xf-detail-label-second">写作与翻译</text>
+          <text>：</text>
+          <text class="xf-detail-content">{{result.write}}</text>
+        </view> 
+      </view>
+    </view>
+
+    <view class="xf-type-item xf-item-show">
+      <view class="xf-head" bindtap="slideDetail">
+        <text class="xf-type-name">口试成绩</text>
+      </view>                
+      <view class="xf-detail">
+        <view class="xf-detail-item">
+          <text class="xf-detail-label">准考证号</text>
+          <text>：</text>
+          <text class="xf-detail-content">{{result.oralCard}}</text>
+        </view>
+        <view class="xf-detail-item">
+          <text class="xf-detail-label">等级</text>
+          <text>：</text>
+          <text class="xf-detail-content score_total">{{result.oralScore}}</text>
+        </view>                        
+      </view>
+    </view>
+  </block>
+</view>
+</block> 
 </view>

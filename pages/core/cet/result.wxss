@@ -1,58 +1,133 @@
 .container{
   background: #f7f7f7;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
 }
 
 /*  查询结果  */
 
-.result{
-  margin-left: 70rpx;
-  margin-right: 70rpx;
-  margin-top: 70rpx;
-}
-.result .baseinf{
-  margin-top: 30rpx;
-}
-.result .examName{
-    font-size: 32rpx;
-    margin-bottom: 20rpx;
-}
-.result .school,
-.result .name,
-.result .time,
-.result .idCard{
-  color: #999;
-  font-size: 26rpx;
-}
-.result .score{
-  margin-top: 50rpx;
-  background: #F2F2F2;
-  padding:25rpx; 
 
+.xf-title-wraper {
+  display: flex;
+  justify-content: space-between;
+  padding: 50rpx 0;
 }
-.result .score{
-  color: #999;
-  background: #fff;
+.xf-title-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 25rpx;
 }
-.result .score .total{
-  font-size: 33rpx;
-  color: #333;
+.xf-stu-info {
+  display: flex;
+  flex-direction: column;
 }
-.result .score .scoreList{
-  margin-top: 20rpx;
+.xf-stu-info text {
+  font-size: 11pt;
+  line-height: 160%; 
+  color: #888;
 }
-.result .list{
-  overflow: hidden;
-  padding: 15rpx;
-   border-top: 1px solid #eee;
+.xf-title {
+  font-size: 20pt;
+  font-weight: bold;
+  line-height: 150%;
+  margin-bottom: 15rpx;
+  color: #222;
 }
-.result .list .left{
-  float: left;
+.xf-title-icon {
+ display: block;
+ width: 200rpx;
+ height: 200rpx;
+ padding-right: 5rpx;
+ opacity: .3;
 }
-.result .list .right{
-  float: right;
+
+
+.xf-types {
+    display: flex;
+    flex-direction: column;
 }
-.resultTitle{
-    font-size: 20pt;
-    font-weight: bold;
-    color: #222;
+.xf-type-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 11pt;
+    padding: 0 40rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    border-radius: 3px;
+}
+.xf-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80rpx; 
+}
+
+.xf-detail {
+    display: none;
+    flex-direction: column;   
+    overflow: hidden;
+    padding: 0;
+}
+.xf-item-show .xf-detail {
+    display: flex;
+    padding: 5rpx 0 15rpx;
+}
+.xf-detail-item {
+    display: flex;
+    align-items: center;
+    padding: 25rpx 5rpx 20rpx;
+    border-top: 1px solid #eee;
+}
+.xf-detail-item-second {
+    display: flex;
+    align-items: center;
+    padding: 25rpx 5rpx 20rpx;
+}
+.xf-detail-label {
+    color: #888;
+    width: 44pt;
+    text-align:justify;
+    text-align-last:justify;
+}
+.xf-detail-label-second {
+    color: #888;
+    width: 55pt;
+    text-align:justify;
+    text-align-last:justify;
+}
+.score_total{
+  color:#F87C02;
+}
+.xf-detail-content {
+    flex: 1;
+}
+
+/**列表展开的icon旋转 **/
+.xf-item-icon{
+    width: 30rpx;
+    height: 30rpx;
+    transition: transform .2s;
+    transform: rotate(0deg);
+}
+.xf-item-show .xf-item-icon{
+    transform: rotate(180deg);
+}
+
+/**列表展开时标题的颜色变化 **/
+.xf-type-name {
+    font-size: 12pt;
+    letter-spacing: 1px;
+    transition: color .15s ease-in-out;
+}
+.xf-item-show .xf-type-name {
+    transition: color .15s ease-in-out;
+    color: #73b4ef;
+}
+
+.xf-TotalTuition, .xf-ApartmentPay, .xf-CollectingPay {
+    margin-left: 25rpx;
+}
+.xf-MajorTuition, .xf-GradeTuition, .xf-SecMajorTuition {
+    margin-left: 50rpx;
 }

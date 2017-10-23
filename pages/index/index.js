@@ -6,38 +6,41 @@ Page({
     offline: false,
     remind: '加载中',
     cores: [
-      [
-        { id: 'kb', name: '课表查询', disabled: false, teacher_disabled: false, offline_disabled: false },
-        { id: 'cj', name: '成绩查询', disabled: false, teacher_disabled: true, offline_disabled: false },
-        { id: 'ks', name: '考试安排', disabled: false, teacher_disabled: false, offline_disabled: false },
-        { id: 'kjs', name: '空教室', disabled: false, teacher_disabled: false, offline_disabled: true },
-        { id: 'xs', name: '学生查询', disabled: false, teacher_disabled: false, offline_disabled: true },
-        { id: 'ykt', name: '一卡通', disabled: false, teacher_disabled: false, offline_disabled: false },
-        { id: 'jy', name: '借阅信息', disabled: false, teacher_disabled: false, offline_disabled: false },
-        { id: 'xf', name: '学费信息', disabled: false, teacher_disabled: true, offline_disabled: false },
-        { id: 'sdf', name: '电费查询', disabled: false, teacher_disabled: true, offline_disabled: false },
-        { id: 'bx', name: '物业报修', disabled: false, teacher_disabled: false, offline_disabled: true }
-      ],[
-        { id: 'cet', name: '四六级', disabled: false, teacher_disabled: true, offline_disabled: true},
-        { id: 'fw', name: "志愿活动", disabled: false, teacher_disabled: true, offline_disabled: false}
-      ]
+    [
+    { id: 'kb', name: '课表查询', disabled: false, teacher_disabled: false, offline_disabled: false },
+    { id: 'cj', name: '成绩查询', disabled: false, teacher_disabled: true, offline_disabled: false },
+    { id: 'ks', name: '考试安排', disabled: false, teacher_disabled: false, offline_disabled: false },
+    { id: 'kjs', name: '空教室', disabled: false, teacher_disabled: false, offline_disabled: true },
+    { id: 'xs', name: '学生查询', disabled: false, teacher_disabled: false, offline_disabled: true },
+    { id: 'ykt', name: '一卡通', disabled: false, teacher_disabled: false, offline_disabled: false },
+    { id: 'jy', name: '借阅信息', disabled: false, teacher_disabled: false, offline_disabled: false },
+    { id: 'xf', name: '学费信息', disabled: false, teacher_disabled: true, offline_disabled: false },
+    { id: 'sdf', name: '电费查询', disabled: false, teacher_disabled: true, offline_disabled: false },
+    { id: 'bx', name: '物业报修', disabled: false, teacher_disabled: false, offline_disabled: true }
+    ],[
+    { id: 'cet', name: '四六级', disabled: false, teacher_disabled: true, offline_disabled: true},
+    { id: 'fw', name: "志愿活动", disabled: false, teacher_disabled: true, offline_disabled: false},
+    { id: 'ts', name: '图书查询', disabled: false, teacher_disabled: false, offline_disabled: true},
+    { id: 'oa', name: 'OA公告', disabled: false, teacher_disabled: false, offline_disabled: true},
+    { id: 'btdz', name: '百团大战', disabled: false, teacher_disabled: false, offline_disabled: true}
+    ]
     ],
     card: {
       'kb': {
         show: false,
         time_list: [
-          { begin: '8:00', end: '8:45' },
-          { begin: '8:55', end: '9:40' },
-          { begin: '10:05', end: '10:50' },
-          { begin: '11:00', end: '11:45' },
-          { begin: '14:00', end: '14:45' },
-          { begin: '14:55', end: '15:40' },
-          { begin: '16:05', end: '16:50' },
-          { begin: '17:00', end: '17:45' },
-          { begin: '19:00', end: '19:45' },
-          { begin: '19:55', end: '20:40' },
-          { begin: '20:50', end: '21:35' },
-          { begin: '21:45', end: '22:30' }
+        { begin: '8:00', end: '8:45' },
+        { begin: '8:55', end: '9:40' },
+        { begin: '10:15', end: '11:00' },
+        { begin: '11:10', end: '11:55' },
+        { begin: '14:00', end: '14:45' },
+        { begin: '14:55', end: '15:40' },
+        { begin: '16:15', end: '17:00' },
+        { begin: '17:10', end: '17:55' },
+        { begin: '19:00', end: '19:45' },
+        { begin: '19:55', end: '20:40' },
+        { begin: '20:50', end: '21:35' },
+        { begin: '21:45', end: '22:30' }
         ],
         data: {}
       },
@@ -195,36 +198,93 @@ Page({
     if(app.cache.ykt){ yktRender(app.cache.ykt); }
     if(app.cache.sdf){ sdfRender(app.cache.sdf); }
     if(app.cache.jy){ jyRender(app.cache.jy); }
+    if(app.cache.ml){ jyRender(app.cache.ml); }
     if(_this.data.offline){ return; }
     wx.showNavigationBarLoading();
 
+
+    //目录渲染
+    function mlRender(info){
+      _this.setData({
+        'cores': info
+      });
+    }
+    //获取目录数据
+    var ml_data = {
+      type: !app._user.teacher ? 'student' : 'teacher'
+    };
+    var loadsum = 0; //正在请求连接数
+    loadsum++; //新增正在请求连接
+    wx.request({
+      url: app._server + '/api/users/get_modules.php',
+      method: 'POST',
+      data: app.key(ml_data),
+      success: function(res) {
+        if(res.data && res.data.status === 200){
+          if(res.data.data.length/10 > 1){
+            var mlList = [[],[]];
+            for(var i = 0; i < 10; i++){
+              mlList[0].push(res.data.data[i]);
+            }
+            for(var i = 0; i < res.data.data.length-10; i++){
+              mlList[1].push(res.data.data[i+10]);
+            }
+          }else{
+            var mlList = [[]];
+            for(var i = 0; i < res.data.data.length; i++){
+              mlList[0].push(res.data.data[i]);
+            }
+          }
+          var info = mlList;
+          if(info){
+            //保存目录缓存
+            app.saveCache('ml', info);
+            mlRender(info);
+          }
+        }else{ app.removeCache('ml'); }
+      },
+      complete: function() {
+        loadsum--; //减少正在请求连接
+        if(!loadsum){
+          if(_this.data.remind == '加载中'){
+            _this.setData({
+              remind: '首页暂无展示'
+            });
+          }
+          wx.hideNavigationBarLoading();
+          wx.stopPullDownRefresh();
+        }
+      }
+    });
+
     //课表渲染
     function kbRender(info){
-      var today = parseInt(info.day),
+      var today = (parseInt(info.day)+(info.previewed==="T"?1:0))%7, //如果后台提示超过了十点半，today的意思就为明天
           lessons = info.lessons[today===0 ? 6 : today-1], //day为0表示周日(6)，day为1表示周一(0)..
           list = [],
           time_list = _this.data.card.kb.time_list;
-      for(var i = 0; i < 6; i++){
-        for(var j = 0; j < lessons[i].length; j++){
-          var lesson = lessons[i][j];
-          if(lesson.weeks && lesson.weeks.indexOf(parseInt(info.week)) !== -1){
-            var begin_lesson = 2*i+1, end_lesson = 2*i+lesson.number;
-            list.push({
-              when: begin_lesson+' - '+end_lesson+'节'
-                    +'（'+time_list[begin_lesson-1].begin+'~'+time_list[end_lesson-1].end+'）',
-              what: lesson.name,
-              where: lesson.place.trim()
-            });
+          for(var i = 0; i < 6; i++){
+            for(var j = 0; j < lessons[i].length; j++){
+              var lesson = lessons[i][j];
+              if(lesson.weeks && lesson.weeks.indexOf(parseInt(info.week)) !== -1){
+                var begin_lesson = 2*i+1, end_lesson = 2*i+lesson.number;
+                list.push({
+                  when: begin_lesson+' - '+end_lesson+'节'
+                  +'（'+time_list[begin_lesson-1].begin+'~'+time_list[end_lesson-1].end+'）',
+                  what: lesson.name,
+                  where: lesson.place.trim()
+                });
+              }
+            }
           }
+          _this.setData({
+            'card.kb.data': list,
+            'card.kb.show': true,
+            'card.kb.previewed': info.previewed === "T" ? true : false,
+            'card.kb.nothing': !list.length,
+            'remind': ''
+          });
         }
-      }
-      _this.setData({
-        'card.kb.data': list,
-        'card.kb.show': true,
-        'card.kb.nothing': !list.length,
-        'remind': ''
-      });
-    }
     //获取课表数据
     var kb_data = {
       id: app._user.we.info.id,
@@ -264,8 +324,8 @@ Page({
     function yktRender(list){
       if(list.length > 0){
         var last = list[0],
-            last_time = last.time.split(' ')[0],
-            now_time = app.util.formatTime(new Date()).split(' ')[0];
+        last_time = last.time.split(' ')[0],
+        now_time = app.util.formatTime(new Date()).split(' ')[0];
         //筛选并计算当日消费（一卡通数据有一定延迟，无法成功获取到今日数据，主页卡片通常不能展示）
         for(var i = 0, today_cost = [], cost_total = 0; i < list.length; i++){
           if(list[i].time.split(' ')[0] == now_time && list[i].cost.indexOf('-') == 0){
@@ -374,7 +434,7 @@ Page({
         var nowTime = new Date().getTime();
         info.book_list.map(function(e){
           var oDate = e.yhrq.split('-'),
-              oTime = new Date(oDate[0], oDate[1]-1, oDate[2]).getTime();
+          oTime = new Date(oDate[0], oDate[1]-1, oDate[2]).getTime();
           e.timing = parseInt((oTime - nowTime) / 1000 / 60 / 60 / 24);
           return e;
         });

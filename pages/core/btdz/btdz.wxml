@@ -1,0 +1,50 @@
+<!--ykt.wxml-->
+<view class="container">
+    <navigator url="xlmd" class="xlmd">
+        <image src="https://we.cqu.pt/api/upload/btdz/xlmd.png"></image>
+    </navigator>
+    <view class="map">
+        <view id="gqt">
+            <image src="https://we.cqu.pt/api/upload/btdz/gqt.png"></image>
+        </view>
+        <view id="zxt">
+            <image src="https://we.cqu.pt/api/upload/btdz/zxt.png"></image>
+        </view>
+        <view class="xh">
+            <navigator id="xh16" url="xy?id=16">
+            <image src="https://we.cqu.pt/api/upload/btdz/16.png"></image></navigator>
+            <navigator id="xh1" url="xy?id=1">
+            <image src="https://we.cqu.pt/api/upload/btdz/1.png"></image></navigator>
+            <navigator id="xh2" url="xy?id=2">
+            <image src="https://we.cqu.pt/api/upload/btdz/2.png"></image></navigator>
+            <navigator id="xh3" url="xy?id=3">
+            <image src="https://we.cqu.pt/api/upload/btdz/3.png"></image></navigator>
+            <navigator id="xh4" url="xy?id=4">
+            <image src="https://we.cqu.pt/api/upload/btdz/4.png"></image></navigator>
+            <navigator id="xh5" url="xy?id=5">
+            <image src="https://we.cqu.pt/api/upload/btdz/5.png"></image></navigator>
+            <navigator id="xh6" url="xy?id=6">
+            <image src="https://we.cqu.pt/api/upload/btdz/6.png"></image></navigator>
+            <navigator id="xh15" url="xy?id=15">
+            <image src="https://we.cqu.pt/api/upload/btdz/15.png"></image></navigator>
+            <navigator id="xh14" url="xy?id=14">
+            <image src="https://we.cqu.pt/api/upload/btdz/14.png"></image></navigator>
+            <navigator id="xh13" url="xy?id=13">
+            <image src="https://we.cqu.pt/api/upload/btdz/13.png"></image></navigator>
+            <navigator id="xh12" url="xy?id=12">
+            <image src="https://we.cqu.pt/api/upload/btdz/12.png"></image></navigator>
+            <navigator id="xh11" url="xy?id=11">
+            <image src="https://we.cqu.pt/api/upload/btdz/11.png"></image></navigator>
+            <navigator id="xh10" url="xy?id=10">
+            <image src="https://we.cqu.pt/api/upload/btdz/10.png"></image></navigator>
+            <navigator id="xh7" url="xy?id=7">
+            <image src="https://we.cqu.pt/api/upload/btdz/7.png"></image></navigator>
+            <navigator id="xh8" url="xy?id=8">
+            <image src="https://we.cqu.pt/api/upload/btdz/8.png"></image></navigator>
+            <navigator id="xh9" url="xy?id=9">
+            <image src="https://we.cqu.pt/api/upload/btdz/9.png"></image></navigator>
+            <image id="ydq" src="https://we.cqu.pt/api/upload/btdz/ydq.png"></image>
+            <image id="byq" src="https://we.cqu.pt/api/upload/btdz/byq.png"></image>
+        </view>
+    </view>
+</view>

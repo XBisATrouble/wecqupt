@@ -1,4 +1,4 @@
-<!--xf.wxml-->
+<!--xf.wxml--> 
 <view class="container">
 
     <view wx:if="{{remind}}" class="remind-box">

@@ -1,0 +1,29 @@
+<!--xy.wxml-->
+<view class="container"> 
+    <view class="main">
+        <!--主体部分标题-->
+        <view class="main-title">
+            <text class="title-text">{{academyName}}</text>
+        </view>
+        <!--主体部分内容列表-->
+        <view class="ks-class-ctn">
+            <block wx:for="{{list}}" wx:key="index">
+                <view class="ks-class-item {{item.open ? 'ks-item-show' : ''}}">
+                    <view class="ks-hd" data-id="{{index}}" bindtap="slideDetail">
+                        <view class="ks-hd-left"> 
+                            <text class="ks-hd-name">
+                                {{item.name}}
+                            </text>
+                        </view>
+                        <image class="ks-item-icon" src="/images/core/common/down.png"></image>
+                    </view>                
+                    <view class="ks-detail">
+                        <text class="ks-detail-item">
+                            {{item.brief}}
+                        </text>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

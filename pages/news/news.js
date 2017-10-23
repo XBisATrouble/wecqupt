@@ -8,9 +8,10 @@ Page({
       { id: 0, 'type': 'all', name: '头条',storage:[], url: 'get_newslist.php', enabled: {guest:false, student:true, teacher:true} },
       { id: 1, 'type': 'jw', name: '教务公告',storage:[], url: 'news/jw_list.php', enabled: {guest:false, student:true, teacher:true} },
       { id: 2, 'type': 'oa', name: 'OA公告',storage:[], url: 'news/oa_list.php', enabled: {guest:false, student:true, teacher:true} },
+      // { id: 3, 'type': 'sw', name: '事务通知',storage:[], url: 'news/sw_list.php', enabled: {guest:false, student:false, teacher:true} },
       { id: 3, 'type': 'hy', name: '会议通知',storage:[], url: 'news/hy_list.php', enabled: {guest:false, student:false, teacher:true} },
       { id: 4, 'type': 'jz', name: '学术讲座',storage:[], url: 'news/jz_list.php', enabled: {guest:true, student:true, teacher:true} },
-      { id: 5, 'type': 'new', name: '综合新闻',storage:[], url: 'news/new_list.php', enabled: {guest:true, student:true, teacher:true} },
+      { id: 5, 'type': 'new', name: '综合新闻',storage:[], url: 'news/new_list.php', enabled: {guest:false, student:false, teacher:false} },
     ],
     'active': {
       id: 0,

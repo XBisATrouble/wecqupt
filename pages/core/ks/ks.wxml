@@ -1,4 +1,4 @@
-<!--ks.wxml-->
+<!--ks.wxml-->   
 <view class="container">
     <view wx:if="{{remind}}" class="remind-box">
         <image wx:if="{{remind == '加载中'}}" class="remind-img" src="/images/index/loading.gif"></image>
@@ -24,7 +24,7 @@
             <block wx:for="{{list}}" wx:key="index">
                 <view class="ks-class-item {{item.open ? 'ks-item-show' : ''}}">
                     <view class="ks-hd" data-id="{{index}}" bindtap="slideDetail">
-                        <view class="ks-hd-left">
+                        <view class="ks-hd-left"> 
                             <view class="ks-hd-name">
                                 <text wx:if="{{item.type == '期中'}}">【{{item.type}}】</text>{{item.course}}
                             </view>

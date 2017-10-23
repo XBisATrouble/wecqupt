@@ -1,0 +1,30 @@
+/**xy.wxss**/
+@import "../ks/ks.wxss";
+
+.main{
+    margin-top: 10rpx;
+}
+.main-title {
+    flex: 1;
+    margin: 35rpx 0 20rpx 25rpx;
+}
+.title-text {
+    color: #999;
+}
+.ks-class-item {
+    margin-bottom:0rpx;
+    border-radius: 0rpx;
+    border-bottom:1rpx solid #E9E9E9;
+}
+.ks-class-ctn{
+    border-radius: 10rpx;
+}
+.ks-hd{
+    height:100rpx;
+}
+.ks-detail-item{
+    font-size: 9pt;
+}
+.ks-hd-name {
+    line-height:100%;
+}

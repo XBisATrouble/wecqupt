@@ -1,0 +1,174 @@
+/**btdz.wxss**/
+.container{
+    background-color: #f7f7f7;
+}
+image{
+    display: block;
+    overflow: none;
+}
+
+
+.xlmd{
+    padding: 20rpx 30rpx;
+    width: 260rpx;
+    height: 99rpx
+}
+.xlmd image{
+    width: 100%;
+    height: 100%;
+}
+.map{
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    padding-bottom: 20rpx;
+}
+#gqt image{
+    padding-top: 20rpx;
+    margin: 0 auto;
+    width: 62rpx;
+    height: 72rpx;
+}
+#zxt image{    
+    padding-top: 500rpx;
+    width: 60rpx;
+    height: 226rpx;
+    float:left;
+    margin-left: 10rpx;
+}
+
+.xh{
+    background-color: #8FB586;
+    width:668rpx;
+    height:1207rpx;
+    float:right;
+    border-radius:86rpx;
+    margin-right:10rpx;
+}
+
+.xh image{
+    width: 100%;
+    height: 100%;
+}
+
+#xh1{
+    width: 101rpx;
+    height: 240rpx;
+    float: left;
+    margin-top: 102rpx;
+    margin-left: -434rpx;
+}
+#xh2{
+    width: 101rpx;
+    height: 279rpx;
+    float: left;
+    margin-top: 344rpx;
+    margin-left: -434rpx;
+}
+#xh3{
+    width: 101rpx;
+    height: 55rpx;
+    float: left;
+    margin-top: 624rpx;
+    margin-left: -434rpx;
+}
+#xh4{
+    width: 101rpx;
+    height: 189rpx;
+    float: left;
+    margin-top: 681rpx;
+    margin-left: -434rpx;
+}
+#xh5{
+    width: 101rpx;
+    height: 189rpx;
+    float: left;
+    margin-top: 870rpx;
+    margin-left: -434rpx;
+}
+#xh6{
+    width: 146rpx;
+    height: 147rpx;
+    float: left;
+    margin-top: 1060rpx;
+    margin-left: -434rpx;
+}
+#xh7{
+    width: 189rpx;
+    height: 101rpx;
+    float: left;
+    margin-top: 1007rpx;
+}
+#xh8{
+    width: 135rpx;
+    height: 101rpx;
+    float: right;
+    margin-right: 101rpx;
+    margin-top: 890rpx;
+}
+#xh9{
+    width: 201rpx;
+    height: 151rpx;
+    float: right;
+    margin-top: -146rpx;
+}
+#xh10{
+    width: 101rpx;
+    height: 365rpx;
+    float: right;
+    margin-right:-231rpx;
+    margin-top: 693rpx;
+}
+#xh11{
+    width: 101rpx;
+    height: 170rpx;
+    float: right;
+    margin-right:-231rpx;
+    margin-top: 520rpx;
+}
+#xh12{
+    width: 101rpx;
+    height: 73rpx;
+    float: right;
+    margin-right:-231rpx;
+    margin-top: 447rpx;
+}
+#xh13{
+    width: 101rpx;
+    height: 170rpx;
+    float: right;
+    margin-right:-231rpx;
+    margin-top: 274rpx;
+}
+#xh14{
+    width:101rpx;
+    height:54rpx;
+    float:right;
+    margin-right:-231rpx;
+    margin-top:219rpx;
+}
+#xh15{
+    width: 232rpx;
+    height:217rpx;
+    float:right;
+}
+#xh16{
+    width: 434rpx;
+    height: 100rpx;
+    float: left;
+}
+#ydq{
+    width: 113rpx;
+    height: 193rpx;
+    float: left;
+    margin-left: 130rpx;
+    margin-top: -980rpx;
+}
+#byq{
+    width: 262rpx;
+    height: 262rpx;
+    float: left;
+    margin-left: 203rpx;
+    margin-top: -730rpx;
+
+}

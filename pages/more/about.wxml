@@ -36,6 +36,21 @@
     <view class="log-list" wx:else>
       <view class="describe">
           <view class="desc-title">
+            <text class="desc-v">v0.1.5 公测版</text>
+            <text class="desc-time">2017.10.23</text>
+          </view>
+          <text class="desc-content">修复BUG</text>
+          <view class="desc-list">
+          </view>
+          <text class="desc-content">优化完善</text>
+          <view class="desc-list">
+            <text class="desc-list-item">图书馆藏书查询功能</text>
+            <text class="desc-list-item">现在可以看到自己的成绩总表和绩点了！</text>
+            <text class="desc-list-item">与社联合作推出百团大战专题</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
             <text class="desc-v">v0.1.4 公测版</text>
             <text class="desc-time">2017.08.02</text>
           </view>

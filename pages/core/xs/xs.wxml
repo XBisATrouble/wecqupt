@@ -1,4 +1,4 @@
-<!--xs.wxml-->
+<!--xs.wxml--> 
 <view class="container {{main.mainDisplay?'home':'active'}}">
 
   <!--头部-->
@@ -9,7 +9,7 @@
           <text>帮助</text>
           <image class="login-help-img" src="/images/more/help.png"></image>
         </view>
-      </view>
+      </view> 
     <!--搜索框-->
     <view class="search-input">
       <view class="search-icon-box">
@@ -22,7 +22,7 @@
         </button>
         <button class="input-confirm-button" formType="submit" hover-class="none">
           <text>搜索</text>
-        </button>
+        </button> 
       </form>
     </view>
   </view>
@@ -81,7 +81,7 @@
           </view>
           <view class="item-ul-more item-ul-li">
             <text class="ul-li-label">课表</text>
-            <navigator open-type="redirect" url="/pages/core/kb/kb?id={{item.xh}}&name={{item.xm}}" class="ul-li-more ul-li-kb">点击查看</navigator>
+            <navigator url="/pages/core/kb/kb?id={{item.xh}}&name={{item.xm}}" class="ul-li-more ul-li-kb">点击查看</navigator>
           </view>
         </view>
       </view>

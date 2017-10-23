@@ -7,8 +7,8 @@
   background: #fff;
 }
 .remind-btn{
-  background: #e78ab0;
-  border-bottom:2px solid  #e78ab0; 
+  background: #e2868f;
+  border-bottom:2px solid  #e2868f; 
 }
 /* 基本信息  */
 .fw-baseinf{
@@ -31,7 +31,7 @@
   margin-right: 20rpx;
 }
 .fw-baseinf .total-time{
-  color: #e78ab0;
+  color: #e2868f;
 }
 .fw-baseinf .bg{
   width: 200rpx;
@@ -46,7 +46,7 @@
   background: #fff;
 }
 .fw-history .year{
-  color: #e78ab0;
+  color: #e2868f;
   font-size: 32rpx;
   margin-bottom: 30rpx;
   margin-top: 45rpx;
@@ -56,7 +56,7 @@
   position: relative;
 }
 .history-item  .radio{
-  background: #e78ab0;
+  background: #e2868f;
   border-radius: 50%;
   width: 22rpx;
   height: 22rpx;
@@ -66,7 +66,7 @@
 
 .history-item .content{
    padding-left: 56rpx;
-   border-left: 2rpx solid #e78ab0;
+   border-left: 2rpx solid #e2868f;
    margin-left: 17rpx;
    width: 630rpx;
    overflow: hidden;
@@ -90,7 +90,7 @@
 }
 
 .content-item .time{
-  color: #e78ab0;
+  color: #e2868f;
 }
 .content-item .title{
   margin-right: 10rpx;

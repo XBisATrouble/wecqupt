@@ -1,0 +1,46 @@
+<!--map.wxml--> 
+<view class="container">
+	<view>
+		<view class="ts-header">
+			<view class="ts-text">
+				<text wx:if="{{flagCan == 1}}" class="ts-header-title">可借</text>
+			</view>
+		</view>
+
+		<view class="ts-detail">
+			<block wx:for="{{listCan}}" wx:key="index">
+				<view class="ts-detail-item">
+					<view class="ts-detail-text">	
+						<text class="ts-name">{{item.bookname}}</text>
+						<text class="ts-num">剩余{{item.num}}本</text>
+						<text class="ts-num">索书号:{{item.searchId}}</text> 
+						<text class="ts-position">{{item.position}}</text>
+					</view>
+					<image class="ts-map" src="{{item.map}}"></image>
+				</view>
+			</block>
+		</view>
+	</view>
+
+	<view>
+		<view class="ts-header">
+			<view class="ts-text">
+				<text wx:if="{{flagCant == 1}}" class="ts-header-title">已借出</text>
+			</view>
+		</view>
+
+		<view class="ts-detail">
+			<block wx:for="{{listCant}}" wx:key="index">
+				<view class="ts-detail-item">
+					<view class="ts-detail-text">	
+						<text class="ts-name">{{item.bookname}}</text>
+						<text class="ts-num">借出{{item.num}}本</text>
+						<text class="ts-num">索书号:{{item.searchId}}</text>
+						<text class="ts-position">{{item.position}}</text>
+					</view>
+					<image class="ts-map" src="{{item.map}}"></image>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>

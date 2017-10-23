@@ -80,6 +80,12 @@
 .list-item.new{
   background-color: #7acfa6;
 }
+.list-item.sw{
+  background-color: #FEAC75;
+}
+.list-item.wn{
+  background-color: #E5A2C4;
+}
 .list-item-left{
   flex: 1 1 auto;
   display: flex;

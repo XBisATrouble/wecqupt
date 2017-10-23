@@ -1,4 +1,4 @@
-<!--index.wxml-->
+<!--index.wxml--> 
 <view class="container">
     <view class="fix_tip {{offline?'active':''}}">
         <text>离线缓存模式</text>
@@ -39,10 +39,12 @@
       <navigator url="/pages/core/kb/kb">
         <view class="card-item-hd">
           <image class="card-item-icon" src="/images/core/kb.png"></image>
-          <text class="card-item-name">今日课表</text>
+          <text class="card-item-name" wx:if="{{card.kb.previewed}}">明日课表</text>
+          <text class="card-item-name" wx:else>                      今日课表</text>
         </view>
         <view wx:if="{{card.kb.nothing}}" class="card-item-bd kb-nothing">
-          <text>今天居然没有课~😆</text>
+          <text wx:if="{{card.kb.previewed}}">明天居然没有课,可以睡懒觉啦~😆</text>
+          <text wx:else>                      今天居然没有课~😆</text>
         </view>
         <view wx:else class="card-item-bd">
           <view class="kb-item" wx:for="{{card.kb.data}}" wx:key="when">
